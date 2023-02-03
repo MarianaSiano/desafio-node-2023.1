@@ -9,8 +9,7 @@
 
 
 ## Objetivos do repositorio
-<!-- O objetivo do repositório é ter um projeto pré-configurado para os desenvolvedores realizarem o Desafio de NodeJS da gestão 2023.1. -->
-Esse repositório tem o objetivo de desenvolver o projeto do Desafio de Nodejs da Gestão de 2023.1.
+O objetivo do repositório é ter um projeto pré-configurado para os desenvolvedores realizarem o Desafio de NodeJS da gestão 2023.1.
 
 ## Propositos do desafio
 O projeto consiste em criar uma API que uma aplicação de delivery de produtos irá utilizar. Essa API tem o objetivo de fazer o gerenciamento de produtos, pedidos e restaurantes. Os Restaurantes poderão ser cadastrados e fazer login no sistema por meio de um token JWT. Após o login os restaurantes poderão consultar, cadastrar, editar e excluir seus produtos e seus pedidos com os produtos que ele possui. Um restaurante pode ter vários pedidos e produtos, assim como um pedido pode ter vários produtos.
