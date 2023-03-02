@@ -10,7 +10,8 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-//criar uma migration yarn prisma migrate dev
+//Criar uma migration yarn prisma migrate dev
+//Restaurante
 model Restaurante {
   id        Int      @id @default(autoincrement())
   nome      String
@@ -25,4 +26,34 @@ model Restaurante {
   uptade_at DateTime @default(now())
 
   @@map("restaurantes")
+}
+
+//Produto
+model Produto {
+  id        Int      @id @default(autoincrement())
+  nome      String
+  descricao String
+  quantidade Int
+  preco     String
+  categoria String
+  id_restaurante Restaurante
+
+  created_at DateTime @default(now())
+  uptade_at DateTime @default(now())
+
+  @@map("produtos")
+
+  restaurante Restaurante[] @relation("Restaurante")
+}
+
+//Pedidos
+model Pedido {
+  id        Int      @id @default(autoincrement())
+  valor_total String
+  nome_cliente String
+  cidade_cliente String
+  endereco_cliente String
+  telefone_cliente String
+  restaurante String
+  restaurante_id Restaurante @relation(fields: [restaurante_id], references: [id])
 }
