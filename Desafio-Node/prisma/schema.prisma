@@ -59,11 +59,13 @@ model Pedido {
   cidade_cliente   String
   endereco_cliente String
   telefone_cliente String
-  restaurante      Restaurante[]
+  restaurante      Restaurante @relation(fields: [id_restaurante], references: [id])
   produtos         Produto[]
 
   created_at DateTime @default(now())
   uptade_at  DateTime @default(now())
 
   @@map("pedidos")
+
+  id_restaurante Int
 }
