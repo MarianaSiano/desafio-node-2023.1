@@ -13,9 +13,9 @@ datasource db {
 //Criar uma migration yarn prisma migrate dev
 //Restaurante
 model Restaurante {
-  id        Int      @id @default(autoincrement())
+  id        Int    @id @default(autoincrement())
   nome      String
-  email     String   @unique
+  email     String @unique
   senha     String
   categoria String
   cidade    String
@@ -23,37 +23,38 @@ model Restaurante {
   telefone  String
 
   created_at DateTime @default(now())
-  uptade_at DateTime @default(now())
+  uptade_at  DateTime @default(now())
+
+  produtos Produto[]
 
   @@map("restaurantes")
 }
 
 //Produto
 model Produto {
-  id        Int      @id @default(autoincrement())
-  nome      String
-  descricao String
-  quantidade Int
-  preco     String
-  categoria String
-  id_restaurante Restaurante
+  id          Int         @id @default(autoincrement())
+  nome        String
+  descricao   String
+  quantidade  Int
+  preco       String
+  categoria   String
+  restaurante Restaurante @relation(fields: [id_restaurante], references: [id])
 
   created_at DateTime @default(now())
-  uptade_at DateTime @default(now())
+  uptade_at  DateTime @default(now())
+
+  id_restaurante Int
+  //id_restaurante Restaurante
 
   @@map("produtos")
-
-  restaurante Restaurante[] @relation("Restaurante")
 }
 
 //Pedidos
 model Pedido {
-  id        Int      @id @default(autoincrement())
-  valor_total String
-  nome_cliente String
-  cidade_cliente String
+  id               Int    @id @default(autoincrement())
+  valor_total      String
+  nome_cliente     String
+  cidade_cliente   String
   endereco_cliente String
   telefone_cliente String
-  restaurante String
-  restaurante_id Restaurante @relation(fields: [restaurante_id], references: [id])
 }
