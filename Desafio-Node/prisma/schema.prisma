@@ -47,23 +47,23 @@ model Produto {
 
   id_restaurante Int
   //id_restaurante Restaurante //Está dando erro na relação (?)
-  
+
   @@map("produtos")
 }
 
 //Pedidos
 model Pedido {
-  id               Int    @id @default(autoincrement())
+  id               Int           @id @default(autoincrement())
   valor_total      String
   nome_cliente     String
   cidade_cliente   String
   endereco_cliente String
   telefone_cliente String
-  restaurante Restaurante[]
-  produtos    Produto[]
+  restaurante      Restaurante[]
+  produtos         Produto[]
 
   created_at DateTime @default(now())
   uptade_at  DateTime @default(now())
-  
+
   @@map("pedidos")
 }
