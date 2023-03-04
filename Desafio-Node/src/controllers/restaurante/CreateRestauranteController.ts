@@ -1,16 +1,9 @@
 import { Request, Response } from "express";
 
 class CreateRestauranteController {
-    async handle(request: Request, response: Response) {
-        const { nome, endereco, telefone, email, senha } = request.body;
-    
-        return response.json({
-        nome,
-        endereco,
-        telefone,
-        email,
-        senha,
-        });
+    async handle(req: Request, res: Response) {
+        const { nome, email, senha, categoria, cidade, endereco, telefone } = req.body;
+        return res.json({ok: true});
     }
 }
 
