@@ -1,5 +1,7 @@
 class CreateRestauranteService {
-    async execute() {}
+    async execute() {
+        return {ok: true};
+    }
 }
 
 export { CreateRestauranteService };
