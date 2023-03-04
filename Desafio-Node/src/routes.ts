@@ -1,9 +1,11 @@
-import { Router, Request, Response } from "express";
+import { Router } from "express";
+
+//Controllers
+import { CreateRestauranteController } from "./controllers/restaurante/CreateRestauranteController";
 
 const router = Router();
 
-router.get("/", (req, res) => {
-    return res.json({ message: "Hello World" });
-});
+//Rota Restaurante
+router.post("/restaurantes", new CreateRestauranteController().handle);
 
 export { router };

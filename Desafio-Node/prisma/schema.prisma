@@ -53,7 +53,7 @@ model Produto {
 
 //Pedidos
 model Pedido {
-  id               Int           @id @default(autoincrement())
+  id               Int         @id @default(autoincrement())
   valor_total      String
   nome_cliente     String
   cidade_cliente   String
@@ -65,7 +65,7 @@ model Pedido {
   created_at DateTime @default(now())
   uptade_at  DateTime @default(now())
 
-  @@map("pedidos")
-
   id_restaurante Int
+
+  @@map("pedidos")
 }
