@@ -4,4 +4,4 @@ class CreateRestauranteService {
     }
 }
 
-export { CreateRestauranteService };
+export { CreateRestauranteService }
