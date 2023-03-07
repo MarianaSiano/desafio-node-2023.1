@@ -6,9 +6,16 @@ class CreateRestauranteController {
         const { nome, email, senha, categoria, cidade, endereco, telefone } = req.body;
         const createRestauranteService = new CreateRestauranteService();
 
-        createRestauranteService.execute();
+        const restaurante = await createRestauranteService.execute({
+            nome, 
+            email, 
+            senha, 
+            categoria, 
+            cidade, 
+            endereco, 
+            telefone});
 
-        return res.json({ok: true});
+        return res.json({restaurante});
     }
 }
 
