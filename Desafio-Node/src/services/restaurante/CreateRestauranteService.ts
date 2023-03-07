@@ -1,4 +1,7 @@
+//Imports
+import { consumers } from "stream";
 import prismaClient from "../../prisma";
+import { hash } from "bcryptjs";
 
 interface RestauranteRequest {
     nome: string;
@@ -28,11 +31,13 @@ class CreateRestauranteService {
             throw new Error("Restaurante já cadastrado");
         }
 
+        const senhaHash = await hash(senha, 8);
+
         const restaurante = await prismaClient.restaurante.create({
             data: {
                 nome: nome,
                 email: email,
-                senha: senha,
+                senha: senhaHash,
                 categoria: categoria,
                 cidade: cidade,
                 endereco: endereco,
