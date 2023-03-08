@@ -9,6 +9,20 @@ interface Payload {
 
 //middleware
 export function isAuthenticated(req: Request, res: Response, next: NextFunction) {
-    console.log("Chamou o middleware isAuthenticated")
-    return next();
+    const authToken = req.headers.authorization;
+
+    if(!authToken) {
+        return res.status(401).end();
+    }
+
+    const [, token] = authToken.split(" ")
+
+    try {
+        //Validar o token
+        const { sub } = verify(token, process.env.JWT_SECRET) as Payload;
+    }
+
+    catch (error) {
+        return res.status(401).end();
+    }
 }
