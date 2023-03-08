@@ -5,6 +5,9 @@ import { CreateRestauranteController } from "./controllers/restaurante/CreateRes
 import { AuthRestauranteController } from "./controllers/restaurante/AuthRestauranteController"; //Controller Restaurante
 import { DetailRestauranteController } from "./controllers/restaurante/DetailRestauranteController"; //Controller Restaurante
 
+//Middlewares
+import { isAuthenticated } from "./middlewares/isAuthenticated"; //Autenticação
+
 const router = Router();
 
 //post
@@ -12,6 +15,6 @@ router.post("/restaurantes", new CreateRestauranteController().handle); //Rota R
 router.post("/session", new AuthRestauranteController().handle); //Rota Restaurante
 
 //get
-router.get("/detalhes", new DetailRestauranteController().handle); //Rota Restaurante
+router.get("/detalhes", isAuthenticated, new DetailRestauranteController().handle); //Rota Restaurante
 
 export { router };
