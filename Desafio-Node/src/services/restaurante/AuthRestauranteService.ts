@@ -29,8 +29,24 @@ class AuthRestauranteService {
         }
 
         //Gerar o token JWT e devolver para o usuário
+        const token = sign({
+            name: restaurante.nome,
+            email: restaurante.email
+        },
+        process.env.JWT_SECRET,
+        {
+            //subject: restaurante.id, //Subject causando erro
+            expiresIn: '15d'
+        },
+        
+        )
 
-        return { ok: true }
+        return { 
+        id: restaurante.id,
+        nome: restaurante.nome,
+        email: restaurante.email,
+        token: token
+        }
     }
 }
 
