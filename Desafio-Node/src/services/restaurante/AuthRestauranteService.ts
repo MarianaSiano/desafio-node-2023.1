@@ -30,12 +30,12 @@ class AuthRestauranteService {
 
         //Gerar o token JWT e devolver para o usuário
         const token = sign({
-            name: restaurante.nome,
+            name: restaurante.id,
             email: restaurante.email
         },
         process.env.JWT_SECRET,
         {
-            subject: restaurante.nome, //Subject causando erro com restaurante.id
+            subject: restaurante.email, //Subject causando erro com restaurante.id pelo id ser int e não uma string
             expiresIn: '15d'
         },
         
