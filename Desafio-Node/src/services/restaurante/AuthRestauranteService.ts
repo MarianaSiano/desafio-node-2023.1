@@ -1,5 +1,6 @@
 import prismaClient from "../../prisma";
 import { compare } from "bcryptjs";
+import { sign } from "jsonwebtoken";
 
 //Interface
 interface AuthRequest {
@@ -26,6 +27,8 @@ class AuthRestauranteService {
         if(!senhaMatch) {
             throw new Error("Email ou senha incorretos");
         }
+
+        //Gerar o token JWT e devolver para o usuário
 
         return { ok: true }
     }
