@@ -35,7 +35,7 @@ class AuthRestauranteService {
         },
         process.env.JWT_SECRET,
         {
-            //subject: restaurante.id, //Subject causando erro
+            subject: restaurante.nome, //Subject causando erro com restaurante.id
             expiresIn: '15d'
         },
         
