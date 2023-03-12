@@ -1,5 +1,18 @@
+//imports
 import prismaClient from "../../prisma";
 
-class CreateProdutoService {}
+//Interfaces
+interface ProdutoRequest {
+    nome: string;
+    descricao: string;
+    quantidade: number;
+    preco: string;
+    categoria: string;
+    restaurante_id: number;
+}
+
+class CreateProdutoService {
+    async execute() {}
+}
 
 export { CreateProdutoService };
