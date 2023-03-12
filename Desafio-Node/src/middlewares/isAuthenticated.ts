@@ -20,6 +20,7 @@ export function isAuthenticated(req: Request, res: Response, next: NextFunction)
     try {
         //Validar o token
         const { sub } = verify(token, process.env.JWT_SECRET) as Payload;
+        req.restaurante_email = sub;
         return next();
     } catch (error) {
         return res.status(401).end();
