@@ -12,7 +12,9 @@ interface ProdutoRequest {
 }
 
 class CreateProdutoService {
-    async execute() {}
+    async execute({nome, descricao, quantidade, preco, categoria, restaurante_id}: ProdutoRequest) {
+        return { ok: true}
+    }
 }
 
 export { CreateProdutoService };
