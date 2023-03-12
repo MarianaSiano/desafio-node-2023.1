@@ -24,7 +24,7 @@ app.use((err: Error, req: Request, res:Response, next: NextFunction) => {
     status: "error",
     message: "Internal Server Error."
   })
-})
+});
 
 app.listen('3333', () => {
   console.log("O servidor foi inicializado em http://localhost:3333");
