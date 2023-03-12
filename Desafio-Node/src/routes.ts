@@ -5,6 +5,7 @@ import { CreateRestauranteController } from "./controllers/restaurante/CreateRes
 import { AuthRestauranteController } from "./controllers/restaurante/AuthRestauranteController"; //Controller autenticar Restaurante
 import { ReadRestauranteController } from "./controllers/restaurante/ReadRestauranteController"; //Controller ler Restaurante
 import { ReadAllRestaurantesController } from "./controllers/restaurante/ReadAllRestaurantesController"; //Controller ler todos os Restaurantes
+import { CreateProdutoController } from "./controllers/produto/CreateProdutoController"; //Controller criar Produto
 
 //Middlewares
 import { isAuthenticated } from "./middlewares/isAuthenticated"; //Autenticação
@@ -12,8 +13,12 @@ import { isAuthenticated } from "./middlewares/isAuthenticated"; //Autenticaçã
 const router = Router();
 
 //post
-router.post("/create", new CreateRestauranteController().handle); //Rota de Criar Restaurante
+//Restaurante
+router.post("/createResturante", new CreateRestauranteController().handle); //Rota de Criar Restaurante
 router.post("/login", new AuthRestauranteController().handle); //Rota de Login Restaurante
+
+//Produto
+router.post("/createProduto", isAuthenticated, new CreateProdutoController().handle); //Rota de Criar Produto
 
 //get
 router.get("/detalhes", isAuthenticated, new ReadRestauranteController().handle); //Rota de ler um Restaurante enquanto está logado
