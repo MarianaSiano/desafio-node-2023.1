@@ -11,7 +11,7 @@ import { isAuthenticated } from "./middlewares/isAuthenticated"; //Autenticaçã
 const router = Router();
 
 //post
-router.post("/restaurantes", new CreateRestauranteController().handle); //Rota Restaurante
+router.post("/create", new CreateRestauranteController().handle); //Rota Restaurante
 router.post("/session", new AuthRestauranteController().handle); //Rota Restaurante
 
 //get
