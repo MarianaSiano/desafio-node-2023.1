@@ -20,8 +20,8 @@ class CreateProdutoService {
                 quantidade: quantidade,
                 preco: preco,
                 categoria: categoria,
-                id_restaurante: id_restaurante
-            }
+                id_restaurante: id_restaurante,
+            },
         });
 
         return produto;
