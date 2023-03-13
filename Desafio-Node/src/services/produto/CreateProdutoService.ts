@@ -8,12 +8,23 @@ interface ProdutoRequest {
     quantidade: number;
     preco: string;
     categoria: string;
-    restaurante_id: number;
+    id_restaurante: number;
 }
 
 class CreateProdutoService {
-    async execute({nome, descricao, quantidade, preco, categoria, restaurante_id}: ProdutoRequest) {
-        return { ok: true}
+    async execute({nome, descricao, quantidade, preco, categoria, id_restaurante}: ProdutoRequest) {
+        const produto = await prismaClient.produto.create({
+            data: {
+                nome: nome,
+                descricao: descricao,
+                quantidade: quantidade,
+                preco: preco,
+                categoria: categoria,
+                id_restaurante: id_restaurante
+            }
+        });
+
+        return produto;
     }
 }
 
