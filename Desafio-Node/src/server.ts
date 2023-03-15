@@ -4,12 +4,14 @@ import 'express-async-errors';
 import { Request, Response, NextFunction } from "express";
 import cors from "cors";
 import { router } from "./routes";
+import bodyParser = require("body-parser");
 
 //variaveis
 const app = express();
 
 //apps
 app.use(express.json());
+app.use(bodyParser.json());
 app.use(cors());
 app.use(router);
 
