@@ -1,22 +1,38 @@
-
 import prismaClient from "../../prisma";
+import { hash } from "bcryptjs";
+
+interface RestauranteRequest {
+    id: string;
+    nome: string;
+    email: string;
+    senha: string;
+    categoria: string;
+    cidade: string;
+    endereco: string;
+    telefone: string;
+}
+
 class UpdateRestauranteService {
-    async execute(id, nome, email, senha, categoria, cidade, endereco, telefone) {
-        const restauranteUpdate = await prismaClient.restaurante.update({
+    async execute({id, nome, email, senha, categoria, cidade, endereco, telefone}: RestauranteRequest) {
+        const senhaHash = await hash(senha, 8);
+
+        const restaurante = await prismaClient.restaurante.update({
             where: {
-                id: id
+                id: parseInt(id)
             },
             data: {
-                nome, 
-                email, 
-                senha, 
-                categoria, 
-                cidade, 
-                endereco, 
-                telefone
-            }
-        })
+                nome: nome,
+                email: email,
+                senha: senhaHash,
+                categoria: categoria,
+                cidade: cidade,
+                endereco: endereco,
+                telefone: telefone
+            },
+        });
+
+        return restaurante;
     }
 }
 
-export { UpdateRestauranteService   }
+export { UpdateRestauranteService };
