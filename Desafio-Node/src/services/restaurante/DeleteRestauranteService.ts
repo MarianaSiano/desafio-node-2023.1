@@ -1,7 +1,7 @@
 import prismaClient from "../../prisma";
 
 class DeleteRestauranteService {
-    async execute(id: string) {
+    async execute(id) {
         const restaurante = await prismaClient.restaurante.delete({
             where: {
                 id: parseInt(id)
