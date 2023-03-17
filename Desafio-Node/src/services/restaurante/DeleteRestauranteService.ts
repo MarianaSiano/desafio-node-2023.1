@@ -1,11 +1,15 @@
 import prismaClient from "../../prisma";
+interface RestauranteRequest {
+    id: string;
+    email: string;
+}
 
 class DeleteRestauranteService {
     async execute(id) {
         const restaurante = await prismaClient.restaurante.delete({
             where: {
                 id: parseInt(id)
-            }
+            },
         });
 
         if(!restaurante) {
@@ -17,6 +21,8 @@ class DeleteRestauranteService {
                 id: parseInt(id)
             }
         });
+
+        return restaurante;
     }
 }
 
