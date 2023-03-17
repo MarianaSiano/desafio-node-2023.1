@@ -1,29 +1,14 @@
 import prismaClient from "../../prisma";
-interface RestauranteRequest {
-    id: string;
-    email: string;
-}
 
 class DeleteRestauranteService {
-    async execute(id) {
-        const restaurante = await prismaClient.restaurante.delete({
+    async deletarRestaurante(id) {
+        const resultado = await prismaClient.restaurante.delete({
             where: {
-                id: parseInt(id)
-            },
-        });
-
-        if(!restaurante) {
-            throw new Error("Restaurante não encontrado");
-        }
-
-        await prismaClient.restaurante.delete({
-            where: {
-                id: parseInt(id)
+                id
             }
         });
-
-        return restaurante;
+        return resultado;
     }
 }
 
-export { DeleteRestauranteService }
+export { DeleteRestauranteService };
