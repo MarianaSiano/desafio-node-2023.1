@@ -1,7 +1,6 @@
 import prismaClient from "../../prisma";
-
 class DeleteRestauranteService {
-    async deletarRestaurante(id) {
+    static async deletarRecurso({id}) {
         const resultado = await prismaClient.restaurante.delete({
             where: {
                 id

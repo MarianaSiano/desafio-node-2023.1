@@ -25,7 +25,7 @@ router.post("/createProduto", isAuthenticated, new CreateProdutoController().han
 //get
 //Restaurante
 router.get("/detalhes", isAuthenticated, new ReadRestauranteController().handle); //Rota de ler um Restaurante enquanto está logado
-router.get("/restaurantes/", new ReadAllRestaurantesController().handle); //Rota de ler todos os resstaurante, não precisa estar logado
+router.get("/restaurantes", new ReadAllRestaurantesController().handle); //Rota de ler todos os resstaurante, não precisa estar logado
 
 //put
 //Restaurante
@@ -33,6 +33,6 @@ router.put("/updateRestaurante/:id", isAuthenticated, new UpdateRestauranteContr
 
 //delete
 //Restaurante
-router.delete("/deleteRestaurante/:id", isAuthenticated, new DeleteRestauranteController().handle); //Rota de deletar Restaurante
+router.delete("/deletarRestaurante/:id", isAuthenticated, new DeleteRestauranteController().handle); //Rota de deletar Restaurante
 
 export { router };
