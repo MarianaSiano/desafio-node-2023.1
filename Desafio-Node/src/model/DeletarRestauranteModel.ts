@@ -1,8 +1,8 @@
-const deleteRestaurante = require('./model/DeletarRestauranteModel');
+const DeletarRestauranteModel = require('../models/DeletarRestauranteModel');
 
-async function DeletarRestauranteModel(id) {
-    const resultado = await deleteRestaurante({ _id: id });
+async function deletarRecurso(id) {
+    const resultado = await DeletarRestauranteModel.deleteOne({ _id: id });
     return resultado;
 }
 
-module.exports = DeletarRestauranteModel; 
+module.exports = { deletarRecurso };

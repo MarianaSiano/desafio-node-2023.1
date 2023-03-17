@@ -1,6 +1,5 @@
 import {  Request, Response } from 'express';
 import { DeleteRestauranteService } from '../../services/restaurante/DeleteRestauranteService';
-
 class DeleteRestauranteController {
     async handle(req: Request, res: Response) {
         const { id } = req.params;
