@@ -8,6 +8,7 @@ import { ReadAllRestaurantesController } from "./controllers/restaurante/ReadAll
 import { UpdateRestauranteController } from "./controllers/restaurante/UpdateRestauranteController"; //Controller atualizar Restaurante
 import { DeleteRestauranteController } from "./controllers/restaurante/DeleteRestauranteController"; //Controller deletar Restaurante
 import { CreateProdutoController } from "./controllers/produto/CreateProdutoController"; //Controller criar Produto
+import { ReadProdutoController } from "./controllers/produto/ReadProdutoController"; //Controller ler Produto
 
 //Middlewares
 import { isAuthenticated } from "./middlewares/isAuthenticated"; //Autenticação
@@ -24,8 +25,11 @@ router.post("/createProduto", isAuthenticated, new CreateProdutoController().han
 
 //get
 //Restaurante
-router.get("/detalhes", isAuthenticated, new ReadRestauranteController().handle); //Rota de ler um Restaurante enquanto está logado
+router.get("/detalheRestaurante", isAuthenticated, new ReadRestauranteController().handle); //Rota de ler um Restaurante enquanto está logado
 router.get("/restaurantes", new ReadAllRestaurantesController().handle); //Rota de ler todos os resstaurante, não precisa estar logado
+
+//Produto
+router.get("/detalhesProduto", new ReadProdutoController().handle); //Rota de ler um produto
 
 //put
 //Restaurante
