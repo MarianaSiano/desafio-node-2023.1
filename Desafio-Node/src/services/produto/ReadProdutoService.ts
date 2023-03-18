@@ -11,7 +11,7 @@ interface ProdutoRequest {
 }
 
 class ReadProdutoService {
-    async execute({id, nome, descricao, quantidade, preco, categoria, id_restaurante}: ProdutoRequest) {
+    async execute({ id }: ProdutoRequest) {
         const produto = await prismaClient.produto.findUnique({
             where: {
                 id: id
