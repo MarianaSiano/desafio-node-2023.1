@@ -1,19 +1,33 @@
 import prismaClient from "../../prisma";
 
+interface ProdutoRequest {
+    id: number;
+    nome: string;
+    descricao: string;
+    quantidade: number;
+    preco: number;
+    categoria: string;
+    id_restaurante: number;
+}
+
 class ReadProdutoService {
-    async execute(produto_id: string) {
-        const produto = await prismaClient.produto.findFirst({
+    async execute({id, nome, descricao, quantidade, preco, categoria, id_restaurante}: ProdutoRequest) {
+        const produto = await prismaClient.produto.findUnique({
             where: {
-                id: parseInt(produto_id)
+                id: id
             },
             select: {
                 id: true,
                 nome: true,
                 descricao: true,
+                quantidade: true,
                 preco: true,
-                categoria: true
+                categoria: true,
+                id_restaurante: true
             }
         });
+
+        return { produto };
     }
 }
 
