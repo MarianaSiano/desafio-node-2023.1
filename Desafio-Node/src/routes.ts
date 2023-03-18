@@ -37,8 +37,12 @@ router.get("/produtos", new ReadAllProdutosController().handle); //Rota de visua
 //Restaurante
 router.put("/updateRestaurante/:id", isAuthenticated, new UpdateRestauranteController().handle); //Rota de atualizar Restaurante
 
+//Produto
+
 //delete
 //Restaurante
 router.delete("/deletarRestaurante/:id", isAuthenticated, new DeleteRestauranteController().handle); //Rota de deletar Restaurante
+
+//Produto
 
 export { router };

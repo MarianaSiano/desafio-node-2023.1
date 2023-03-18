@@ -5,7 +5,7 @@ interface ProdutoRequest {
     nome: string;
     descricao: string;
     quantidade: number;
-    preco: number;
+    preco: string;
     categoria: string;
     id_restaurante: number;
 }
