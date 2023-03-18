@@ -1,15 +1,19 @@
 import { Router } from "express";
 
 //Controllers
+//Restaurante
 import { CreateRestauranteController } from "./controllers/restaurante/CreateRestauranteController"; //Controller criar Restaurante
 import { AuthRestauranteController } from "./controllers/restaurante/AuthRestauranteController"; //Controller autenticar Restaurante
 import { ReadRestauranteController } from "./controllers/restaurante/ReadRestauranteController"; //Controller visualizar Restaurante
 import { ReadAllRestaurantesController } from "./controllers/restaurante/ReadAllRestaurantesController"; //Controller visualizar todos os Restaurantes
 import { UpdateRestauranteController } from "./controllers/restaurante/UpdateRestauranteController"; //Controller atualizar Restaurante
 import { DeleteRestauranteController } from "./controllers/restaurante/DeleteRestauranteController"; //Controller deletar Restaurante
+
+//Produto
 import { CreateProdutoController } from "./controllers/produto/CreateProdutoController"; //Controller criar Produto
 import { ReadProdutoController } from "./controllers/produto/ReadProdutoController"; //Controller visualizar Produto
 import { ReadAllProdutosController } from "./controllers/produto/ReadAllProdutosController"; //Controller visualizar todos os Produtos
+import { UpdateProdutoController } from "./controllers/produto/UpdateProdutoController"; //Controller atualizar Produto
 
 //Middlewares
 import { isAuthenticated } from "./middlewares/isAuthenticated"; //Autenticação
@@ -38,6 +42,7 @@ router.get("/produtos", new ReadAllProdutosController().handle); //Rota de visua
 router.put("/updateRestaurante/:id", isAuthenticated, new UpdateRestauranteController().handle); //Rota de atualizar Restaurante
 
 //Produto
+router.put("/updateProduto/:id", isAuthenticated, new UpdateProdutoController().handle); //Rota de atualizar Produto
 
 //delete
 //Restaurante
