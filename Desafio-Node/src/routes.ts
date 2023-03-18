@@ -25,11 +25,12 @@ router.post("/createProduto", isAuthenticated, new CreateProdutoController().han
 
 //get
 //Restaurante
-router.get("/detalheRestaurante", isAuthenticated, new ReadRestauranteController().handle); //Rota de ler um Restaurante enquanto está logado
-router.get("/restaurantes", new ReadAllRestaurantesController().handle); //Rota de ler todos os resstaurante, não precisa estar logado
+router.get("/detalheRestaurante", isAuthenticated, new ReadRestauranteController().handle); //Rota de visualizar um Restaurante enquanto está logado
+router.get("/restaurantes", new ReadAllRestaurantesController().handle); //Rota de visualizar todos os resstaurante, não precisa estar logado
 
 //Produto
-router.get("/detalheProduto/:id", new ReadProdutoController().handle); //Rota de ler um produto
+router.get("/detalheProduto/:id", new ReadProdutoController().handle); //Rota de visualizar um produto
+router.get("/produtos", new ReadAllRestaurantesController().handle); //Rota de visualizar todos os produtos
 
 //put
 //Restaurante
