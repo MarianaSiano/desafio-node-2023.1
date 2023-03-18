@@ -16,6 +16,9 @@ import { ReadAllProdutosController } from "./controllers/produto/ReadAllProdutos
 import { UpdateProdutoController } from "./controllers/produto/UpdateProdutoController"; //Controller atualizar Produto
 import { DeleteProdutoController } from "./controllers/produto/DeleteProdutoController"; //Controller deletar Produto
 
+//Pedido
+import { CreatePedidoController } from "./controllers/pedido/CreatePedidoController"; //Controller criar Pedido
+
 //Middlewares
 import { isAuthenticated } from "./middlewares/isAuthenticated"; //Autenticação
 
@@ -29,6 +32,9 @@ router.post("/login", new AuthRestauranteController().handle); //Rota de Login R
 //Produto
 router.post("/createProduto", isAuthenticated, new CreateProdutoController().handle); //Rota de Criar Produto
 
+//Pedido
+router.post("/createPedido", isAuthenticated, new CreatePedidoController().handle); //Rota de Criar Pedido
+
 //get
 //Restaurante
 router.get("/detalheRestaurante", isAuthenticated, new ReadRestauranteController().handle); //Rota de visualizar um Restaurante enquanto está logado
@@ -38,6 +44,8 @@ router.get("/restaurantes", new ReadAllRestaurantesController().handle); //Rota 
 router.get("/detalheProduto/:id", new ReadProdutoController().handle); //Rota de visualizar um produto
 router.get("/produtos", new ReadAllProdutosController().handle); //Rota de visualizar todos os produtos
 
+//Pedido
+
 //put
 //Restaurante
 router.put("/updateRestaurante/:id", isAuthenticated, new UpdateRestauranteController().handle); //Rota de atualizar Restaurante
@@ -45,11 +53,15 @@ router.put("/updateRestaurante/:id", isAuthenticated, new UpdateRestauranteContr
 //Produto
 router.put("/updateProduto/:id", isAuthenticated, new UpdateProdutoController().handle); //Rota de atualizar Produto
 
+//Pedido
+
 //delete
 //Restaurante
 router.delete("/deletarRestaurante/:id", isAuthenticated, new DeleteRestauranteController().handle); //Rota de deletar Restaurante
 
 //Produto
 router.delete("/deletarProduto/:id", isAuthenticated, new DeleteProdutoController().handle); //Rota de deletar Produto
+
+//Pedido
 
 export { router };
