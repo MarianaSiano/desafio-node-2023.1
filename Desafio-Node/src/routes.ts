@@ -19,6 +19,8 @@ import { DeleteProdutoController } from "./controllers/produto/DeleteProdutoCont
 //Pedido
 import { CreatePedidoController } from "./controllers/pedido/CreatePedidoController"; //Controller criar Pedido
 
+import { UpdatePedidoController } from "./controllers/pedido/UpdatePedidoController"; //Controller atualizar Pedido
+
 //Middlewares
 import { isAuthenticated } from "./middlewares/isAuthenticated"; //Autenticação
 
@@ -54,6 +56,7 @@ router.put("/updateRestaurante/:id", isAuthenticated, new UpdateRestauranteContr
 router.put("/updateProduto/:id", isAuthenticated, new UpdateProdutoController().handle); //Rota de atualizar Produto
 
 //Pedido
+router.put("/updatePedido/:id", isAuthenticated, new UpdatePedidoController().handle); //Rota de atualizar Pedido
 
 //delete
 //Restaurante
