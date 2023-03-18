@@ -21,6 +21,7 @@ import { CreatePedidoController } from "./controllers/pedido/CreatePedidoControl
 import { ReadPedidosController } from "./controllers/pedido/ReadPedidoController"; //Controller visualizar Pedido
 import { ReadAllPedidosController } from "./controllers/pedido/ReadAllPedidosController"; //Controller visualizar todos os Pedidos
 import { UpdatePedidoController } from "./controllers/pedido/UpdatePedidoController"; //Controller atualizar Pedido
+import { DeletePedidoController } from "./controllers/pedido/DeletePedidoController"; //Controller deletar Pedido
 
 //Middlewares
 import { isAuthenticated } from "./middlewares/isAuthenticated"; //Autenticação
@@ -69,5 +70,6 @@ router.delete("/deletarRestaurante/:id", isAuthenticated, new DeleteRestauranteC
 router.delete("/deletarProduto/:id", isAuthenticated, new DeleteProdutoController().handle); //Rota de deletar Produto
 
 //Pedido
+router.delete("/deletarPedido/:id", isAuthenticated, new DeletePedidoController().handle); //Rota de deletar Pedido
 
 export { router };
