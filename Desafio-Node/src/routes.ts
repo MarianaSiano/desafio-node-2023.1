@@ -14,6 +14,7 @@ import { CreateProdutoController } from "./controllers/produto/CreateProdutoCont
 import { ReadProdutoController } from "./controllers/produto/ReadProdutoController"; //Controller visualizar Produto
 import { ReadAllProdutosController } from "./controllers/produto/ReadAllProdutosController"; //Controller visualizar todos os Produtos
 import { UpdateProdutoController } from "./controllers/produto/UpdateProdutoController"; //Controller atualizar Produto
+import { DeleteProdutoController } from "./controllers/produto/DeleteProdutoController"; //Controller deletar Produto
 
 //Middlewares
 import { isAuthenticated } from "./middlewares/isAuthenticated"; //Autenticação
@@ -49,5 +50,6 @@ router.put("/updateProduto/:id", isAuthenticated, new UpdateProdutoController().
 router.delete("/deletarRestaurante/:id", isAuthenticated, new DeleteRestauranteController().handle); //Rota de deletar Restaurante
 
 //Produto
+router.delete("/deletarProduto/:id", isAuthenticated, new DeleteProdutoController().handle); //Rota de deletar Produto
 
 export { router };
