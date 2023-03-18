@@ -18,7 +18,8 @@ import { DeleteProdutoController } from "./controllers/produto/DeleteProdutoCont
 
 //Pedido
 import { CreatePedidoController } from "./controllers/pedido/CreatePedidoController"; //Controller criar Pedido
-
+import { ReadPedidosController } from "./controllers/pedido/ReadPedidoController"; //Controller visualizar Pedido
+import { ReadAllPedidosController } from "./controllers/pedido/ReadAllPedidosController"; //Controller visualizar todos os Pedidos
 import { UpdatePedidoController } from "./controllers/pedido/UpdatePedidoController"; //Controller atualizar Pedido
 
 //Middlewares
@@ -47,6 +48,8 @@ router.get("/detalheProduto/:id", new ReadProdutoController().handle); //Rota de
 router.get("/produtos", new ReadAllProdutosController().handle); //Rota de visualizar todos os produtos
 
 //Pedido
+router.get("/detalhePedido/:id", isAuthenticated, new ReadPedidosController().handle); //Rota de visualizar um pedido
+router.get("/pedidos", isAuthenticated, new ReadAllPedidosController().handle); //Rota de visualizar todos os pedidos
 
 //put
 //Restaurante

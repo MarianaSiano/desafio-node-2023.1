@@ -46,7 +46,6 @@ model Produto {
   uptade_at  DateTime @default(now())
 
   id_restaurante Int
-  //id_restaurante Restaurante //Está dando erro na relação (?)
 
   @@map("produtos")
 }
