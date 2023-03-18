@@ -2,7 +2,7 @@ import prismaClient from "../../prisma";
 import { hash } from "bcryptjs";
 
 interface RestauranteRequest {
-    id: string;
+    id: number;
     nome: string;
     email: string;
     senha: string;
@@ -18,7 +18,7 @@ class UpdateRestauranteService {
 
         const restaurante = await prismaClient.restaurante.update({
             where: {
-                id: parseInt(id)
+                id: Number(id)
             },
             data: {
                 nome: nome,

@@ -1,10 +1,10 @@
 import prismaClient from "../../prisma";
 
 class ReadRestauranteService {
-    async execute(restaurante_email: string) {
+    async execute(id: number) {
         const restaurante = await prismaClient.restaurante.findFirst({
             where: {
-                email: restaurante_email
+                id: id
             },
             select: {
                 id: true,

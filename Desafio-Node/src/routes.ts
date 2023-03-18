@@ -41,7 +41,7 @@ router.post("/createPedido", isAuthenticated, new CreatePedidoController().handl
 
 //get
 //Restaurante
-router.get("/detalheRestaurante", isAuthenticated, new ReadRestauranteController().handle); //Rota de visualizar um Restaurante enquanto está logado
+router.get("/detalheRestaurante/:id", isAuthenticated, new ReadRestauranteController().handle); //Rota de visualizar um Restaurante enquanto está logado
 router.get("/restaurantes", new ReadAllRestaurantesController().handle); //Rota de visualizar todos os resstaurante, não precisa estar logado
 
 //Produto

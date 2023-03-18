@@ -13,7 +13,8 @@ class CreateRestauranteController {
             categoria, 
             cidade, 
             endereco, 
-            telefone});
+            telefone
+        });
 
         return res.json({restaurante});
     }

@@ -14,7 +14,7 @@ class DeleteRestauranteController {
             return res.status(400).json({
                 message: err.message
             })
-        } //Está dando problema para deletar o restaurante com id 4.
+        }
 
         res.send(resultado)
     }
