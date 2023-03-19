@@ -67,12 +67,12 @@ router.put("/pedido/update/:id", isAuthenticated, new UpdatePedidoController().h
 
 //delete
 //Restaurante
-router.delete("/deletarRestaurante/:id", isAuthenticated, new DeleteRestauranteController().handle); //Rota de deletar Restaurante
+router.delete("/restaurante/delete/:id", isAuthenticated, new DeleteRestauranteController().handle); //Rota de deletar Restaurante
 
 //Produto
-router.delete("/deletarProduto/:id", isAuthenticated, new DeleteProdutoController().handle); //Rota de deletar Produto
+router.delete("/produto/delete/:id", isAuthenticated, new DeleteProdutoController().handle); //Rota de deletar Produto
 
 //Pedido
-router.delete("/deletarPedido/:id", isAuthenticated, new DeletePedidoController().handle); //Rota de deletar Pedido
+router.delete("/pedido/delete/:id", isAuthenticated, new DeletePedidoController().handle); //Rota de deletar Pedido
 
 export { router };
