@@ -1,0 +1,12 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Desafio Node.js 2023.1",
+        "description": "Proejeto desenvolvido para o desafio de Node.js da Code Empresa Júnior de Computação na gestão de 2023.1",
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        }
+    }
+}
