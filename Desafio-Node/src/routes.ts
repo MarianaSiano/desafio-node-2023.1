@@ -41,16 +41,16 @@ router.post("/pedido/create", isAuthenticated, new CreatePedidoController().hand
 
 //get
 //Restaurante
-router.get("/detalheRestaurante/:id", isAuthenticated, new ReadRestauranteController().handle); //Rota de visualizar um Restaurante enquanto está logado
-router.get("/restaurantes", new ReadAllRestaurantesController().handle); //Rota de visualizar todos os resstaurante, não precisa estar logado
+router.get("/restaurante/detalhe/:id", isAuthenticated, new ReadRestauranteController().handle); //Rota de visualizar um Restaurante enquanto está logado
+router.get("/restaurantes/detalhes", new ReadAllRestaurantesController().handle); //Rota de visualizar todos os resstaurante, não precisa estar logado
 
 //Produto
-router.get("/detalheProduto/:id", new ReadProdutoController().handle); //Rota de visualizar um produto
-router.get("/produtos", new ReadAllProdutosController().handle); //Rota de visualizar todos os produtos
+router.get("/produto/detalhe/:id", new ReadProdutoController().handle); //Rota de visualizar um produto
+router.get("/produtos/detalhes", new ReadAllProdutosController().handle); //Rota de visualizar todos os produtos
 
 //Pedido
-router.get("/detalhePedido/:id", isAuthenticated, new ReadPedidosController().handle); //Rota de visualizar um pedido
-router.get("/pedidos", isAuthenticated, new ReadAllPedidosController().handle); //Rota de visualizar todos os pedidos
+router.get("/pedido/detalhe/:id", isAuthenticated, new ReadPedidosController().handle); //Rota de visualizar um pedido
+router.get("/pedidos/detalhes", isAuthenticated, new ReadAllPedidosController().handle); //Rota de visualizar todos os pedidos
 
 //put
 //Restaurante
