@@ -30,14 +30,14 @@ const router = Router();
 
 //post
 //Restaurante
-router.post("/createRestaurante", new CreateRestauranteController().handle); //Rota de Criar Restaurante
+router.post("/restaurante/create", new CreateRestauranteController().handle); //Rota de Criar Restaurante
 router.post("/login", new AuthRestauranteController().handle); //Rota de Login Restaurante
 
 //Produto
-router.post("/createProduto", isAuthenticated, new CreateProdutoController().handle); //Rota de Criar Produto
+router.post("/produto/create", isAuthenticated, new CreateProdutoController().handle); //Rota de Criar Produto
 
 //Pedido
-router.post("/createPedido", isAuthenticated, new CreatePedidoController().handle); //Rota de Criar Pedido
+router.post("/pedido/create", isAuthenticated, new CreatePedidoController().handle); //Rota de Criar Pedido
 
 //get
 //Restaurante
