@@ -54,12 +54,15 @@ router.get("/pedidos/detalhes", isAuthenticated, new ReadAllPedidosController().
 
 //put
 //Restaurante
+//funciona apenas com o /:id no final da rota e nao com o /10, por exemplo
 router.put("/restaurante/update/:id", isAuthenticated, new UpdateRestauranteController().handle); //Rota de atualizar Restaurante
 
 //Produto
+//funciona apenas com o /:id no final da rota e nao com o /10, por exemplo
 router.put("/produto/update/:id", isAuthenticated, new UpdateProdutoController().handle); //Rota de atualizar Produto
 
 //Pedido
+//funciona apenas com o /:id no final da rota e nao com o /10, por exemplo
 router.put("/pedido/update/:id", isAuthenticated, new UpdatePedidoController().handle); //Rota de atualizar Pedido
 
 //delete
