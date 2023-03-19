@@ -24,5 +24,8 @@
             "name": "Pedido",
             "description": "API para o gerenciamento de pedidos"
         }
-    ]
+    ],
+    "paths": {
+        
+    }
 }
