@@ -54,13 +54,13 @@ router.get("/pedidos/detalhes", isAuthenticated, new ReadAllPedidosController().
 
 //put
 //Restaurante
-router.put("/updateRestaurante/:id", isAuthenticated, new UpdateRestauranteController().handle); //Rota de atualizar Restaurante
+router.put("/restaurante/update/:id", isAuthenticated, new UpdateRestauranteController().handle); //Rota de atualizar Restaurante
 
 //Produto
-router.put("/updateProduto/:id", isAuthenticated, new UpdateProdutoController().handle); //Rota de atualizar Produto
+router.put("/produto/update/:id", isAuthenticated, new UpdateProdutoController().handle); //Rota de atualizar Produto
 
 //Pedido
-router.put("/updatePedido/:id", isAuthenticated, new UpdatePedidoController().handle); //Rota de atualizar Pedido
+router.put("/pedido/update/:id", isAuthenticated, new UpdatePedidoController().handle); //Rota de atualizar Pedido
 
 //delete
 //Restaurante
