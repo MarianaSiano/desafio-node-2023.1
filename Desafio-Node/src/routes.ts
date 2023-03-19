@@ -40,7 +40,7 @@ router.delete("/restaurante/delete/:id", isAuthenticated, new DeleteRestauranteC
 //Produto
 router.post("/produto/create", isAuthenticated, new CreateProdutoController().handle); //Rota de Criar Produto
 router.get("/produto/detalhe/:id", new ReadProdutoController().handle); //Rota de visualizar um produto
-router.get("/produts/detalhe", new ReadAllProdutosController().handle); //Rota de visualizar todos os produtos
+router.get("/produto/detalhe", new ReadAllProdutosController().handle); //Rota de visualizar todos os produtos
 router.put("/produto/update/:id", isAuthenticated, new UpdateProdutoController().handle); //Rota de atualizar Produto, funciona apenas com o /:id no final da rota e nao com o /10, por exemplo
 router.delete("/produto/delete/:id", isAuthenticated, new DeleteProdutoController().handle); //Rota de deletar Produto
 
