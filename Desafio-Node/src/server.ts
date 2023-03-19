@@ -28,6 +28,7 @@ app.use((err: Error, req: Request, res:Response, next: NextFunction) => {
   })
 });
 
+//Inicializando o servidor
 app.listen('3333', () => {
   console.log("O servidor foi inicializado em http://localhost:3333");
 });
