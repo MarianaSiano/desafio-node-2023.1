@@ -26,6 +26,19 @@
         }
     ],
     "paths": {
-        
+        "/pedido": {
+            "get": {
+                "tags":["Pedido"],
+                "summary": "Recebe todos os pedidos",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Pedido"
+                        }
+                    }
+                }
+            }
+        }
     }
 }
