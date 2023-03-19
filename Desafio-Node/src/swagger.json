@@ -39,6 +39,20 @@
                     }
                 }
             }
+        },
+        "/pedido/detalhe/:id": {
+            "get": {
+                "tags":["Pedido"],
+                "summary": "Recebe um pedido pelo id. Use o token no header",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Pedido"
+                        }
+                    }
+                }
+            }
         }
     }
 }
